@@ -215,6 +215,7 @@ en:
     pm: pm
   views:
     messages:
+      delete_agenda: 'The agenda has been deleted'
       give_authority: 'Authority given'
       set_as_leader: 'You are now leader of team'
       create_agenda: 'Successfully created an agenda!'

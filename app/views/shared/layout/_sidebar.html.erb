@@ -30,6 +30,11 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <% @working_team.agendas.each do |agenda| %>
           <li class="nav-item has-treeview menu-open">
+            <% if @working_team.owner == current_user || agenda.user == current_user %>
+              <%= link_to agenda, method: :delete, data: {confirm: "Are you sure ?"} do %>
+                <i class="fa fa-trash-alt"></i>
+              <% end %>
+            <% end %>
             <a href="#" class="nav-link">
               <i class="fa fa-circle-o nav-icon"></i>
               <p>

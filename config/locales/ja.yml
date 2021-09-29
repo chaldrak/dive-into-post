@@ -205,6 +205,7 @@ ja:
     pm: 午後
   views:
     messages:
+      delete_agenda: '議題は削除されました'
       give_authority: '与えられた権限'
       set_as_leader: 'あなたは今チームのリーダーです'
       create_agenda: 'アジェンダ作成に成功しました！'
