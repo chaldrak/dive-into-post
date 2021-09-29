@@ -38,11 +38,14 @@
               <table class="table">
                 <tbody>
                   <% @team.assigns.each do |assign| %>
+                    <% if @team.owner != assign.user %>
                     <tr>
                       <td><%= image_tag 'default.jpg', size: '40x40' %></td>
                       <td><%= assign.user.email %></td>
                       <td><%= link_to I18n.t('views.button.delete'), team_assign_path(@team, assign), method: :delete, class: 'btn btn-sm btn-danger' if @team.owner == current_user || assign.user == current_user %></td>
+                      <td><%= link_to I18n.t('views.button.give_authority'), owner_change_team_path(assign.user_id), method: :patch, class: 'btn btn-sm btn-info' if @team.owner == current_user %></td>
                     </tr>
+                    <% end %>
                   <% end %>
                 </tbody>
               </table>
